@@ -149,7 +149,8 @@ def detect_splice_dates(p: pd.DataFrame, thresh: float = np.log(2), min_count: i
 # large panels can be linted in bounded memory (run_chunked); run_all is the one-chunk case.
 # ----------------------------------------------------------------------------------------------
 
-def partials(p: pd.DataFrame, gap_days: int = 30, min_run: int = 5, thresh: float = np.log(2), dq_tol: float = 0.005) -> dict:
+def partials(p: pd.DataFrame, gap_days: int = 30, min_run: int = 5, thresh: float = np.log(2), dq_tol: float = 0.005,
+             blowup_factor: float = 1000.0) -> dict:
     out = {"n": len(p)}
     dup = p.duplicated(["ticker", "date"], keep=False)
     out["dup_rows"] = int(p.duplicated(["ticker", "date"]).sum())
@@ -193,6 +194,23 @@ def partials(p: pd.DataFrame, gap_days: int = 30, min_run: int = 5, thresh: floa
                     "ex": [(int(lengths[long_runs[k]]), str(p["ticker"].iat[first_idx[k]]), str(p["date"].iat[first_idx[k]].date()))
                            for k in top]}
     out["jumps"] = detect_jumps(p, thresh=thresh)
+    # level blowups: rows far above the series' recent level (cumulative reverse-split adjustment inflates old
+    # prices and deflates old volumes towards 0; returns stay consistent, levels and volumes do not)
+    recent = p.groupby("ticker", observed=True).tail(252).groupby("ticker", observed=True)["close"].median()
+    ref = p["ticker"].map(recent).to_numpy(np.float64)
+    with np.errstate(invalid="ignore", divide="ignore"):
+        ratio = p["close"].to_numpy(np.float64) / ref
+    blow = np.isfinite(ratio) & (ref > 0) & (ratio > blowup_factor)
+    out["blowup_rows"] = int(blow.sum())
+    out["blowup_zero_vol"] = int((blow & (p["volume"].to_numpy() == 0)).sum()) if "volume" in p else 0
+    out["blowup_series"] = int(p.loc[blow, "ticker"].nunique())
+    if blow.any():
+        mx = pd.DataFrame({"ticker": p.loc[blow, "ticker"].astype(str).to_numpy(), "ratio": ratio[blow],
+                           "close": p.loc[blow, "close"].to_numpy()}).groupby("ticker").agg(max_ratio=("ratio", "max"),
+                                                                                               max_close=("close", "max"))
+        out["blowup_ex"] = mx.sort_values("max_ratio", ascending=False).head(3).reset_index().to_dict("records")
+    else:
+        out["blowup_ex"] = []
     out["span"] = p.groupby("ticker", observed=True)["date"].agg(["min", "max", "size"])
     gaps = (p["date"] - p["prev_date"]).dt.days
     out["gaps"] = p.loc[gaps > gap_days, ["ticker", "prev_date", "date"]].astype({"ticker": str})
@@ -201,7 +219,8 @@ def partials(p: pd.DataFrame, gap_days: int = 30, min_run: int = 5, thresh: floa
 
 def merge(parts: list[dict]) -> dict:
     a = {"n": sum(x["n"] for x in parts)}
-    for k in ("dup_rows", "dup_tickers", "nonpos", "nan_close", "neg_vol", "zero_vol", "weekend_rows"):
+    for k in ("dup_rows", "dup_tickers", "nonpos", "nan_close", "neg_vol", "zero_vol", "weekend_rows",
+              "blowup_rows", "blowup_zero_vol", "blowup_series"):
         a[k] = sum(x[k] for x in parts)
     a["has_ohlc"] = any(x["has_ohlc"] for x in parts)
     a["ohlc_bad"] = sum(x.get("ohlc_bad", 0) for x in parts)
@@ -214,6 +233,7 @@ def merge(parts: list[dict]) -> dict:
     a["stale"] = {"runs": sum(x["stale"]["runs"] for x in parts), "rows": sum(x["stale"]["rows"] for x in parts),
                   "series": sum(x["stale"]["series"] for x in parts),
                   "ex": sorted([e for x in parts for e in x["stale"]["ex"]], reverse=True)[:3]}
+    a["blowup_ex"] = sorted([e for x in parts for e in x.get("blowup_ex", [])], key=lambda e: -e["max_ratio"])[:3]
     a["jumps"] = pd.concat([x["jumps"] for x in parts], ignore_index=True)
     a["span"] = pd.concat([x["span"] for x in parts])
     a["gaps"] = pd.concat([x["gaps"] for x in parts], ignore_index=True)
@@ -285,6 +305,14 @@ def findings(a: dict, sparse_frac: float = 0.05, cluster_min: int = 20, cluster_
                      {"runs": st["runs"], "rows_in_runs": st["rows"], "share_rows": st["rows"] / max(n, 1),
                       "series_with_runs": st["series"], "zero_volume_rows": a["zero_vol"]},
                      [{"ticker": t, "start": d, "len": L} for L, t, d in st["ex"]]))
+    if a.get("blowup_rows", 0):
+        f.append(Finding("prices.level_blowup", "warn",
+                         f"{a['blowup_rows']:,} rows in {a['blowup_series']:,} series sit >1000x above the series' recent level "
+                         f"({a['blowup_zero_vol']:,} with zero volume): cumulative reverse-split adjustment suspected; "
+                         "price levels and volumes are unusable as features (returns unaffected)",
+                         {"rows": a["blowup_rows"], "series": a["blowup_series"], "zero_volume_rows": a["blowup_zero_vol"]},
+                         [{"ticker": e["ticker"], "max_ratio": float(e["max_ratio"]), "max_close": float(e["max_close"])}
+                          for e in a.get("blowup_ex", [])]))
     j = a["jumps"]
     if len(j):
         kinds = j["kind"].value_counts().to_dict()

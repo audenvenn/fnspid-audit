@@ -1,6 +1,6 @@
 finlint prices: FNSPID Stock_price/full_history.zip
 ====================================================
-4 error(s), 8 warning(s), 1 info
+4 error(s), 9 warning(s), 1 info
 [ERROR] prices.coverage_end_clusters: 3,077 of 7,693 series stop on 3 shared date(s) before the panel end (2023-12-28)
         series_in_clusters=3,077, series=7,693, panel_end=2023-12-28
         e.g. date=2020-07-02, series_ending=2,351
@@ -23,6 +23,11 @@ finlint prices: FNSPID Stock_price/full_history.zip
         e.g. ticker=AAMC, prev_date=2020-07-02, date=2022-03-21
         e.g. ticker=AAN, prev_date=2020-07-02, date=2020-11-25
         e.g. ticker=ABMD, prev_date=2020-04-01, date=2020-07-02
+[WARN ] prices.level_blowup: 134,791 rows in 151 series sit >1000x above the series' recent level (66,284 with zero volume): cumulative reverse-split adjustment suspected; price levels and volumes are unusable as features (returns unaffected)
+        rows=134,791, series=151, zero_volume_rows=66,284
+        e.g. ticker=TOPS, max_ratio=117,231,082,466,757, max_close=1,041,012,025,720,832
+        e.g. ticker=CEI, max_ratio=11,741,329,480, max_close=10,156,250,112
+        e.g. ticker=UVXY, max_ratio=1,043,081,613, max_close=20,579,999,744
 [WARN ] prices.missing_close: 257 rows with a missing (NaN) close
         rows=257
 [WARN ] prices.ohlc_consistency: 3,491 rows (non-zero prices) violate low <= open,close <= high

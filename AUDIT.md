@@ -53,6 +53,7 @@ We streamed all 28.6M news records and all 29.7M price rows and checked them aga
   - 800,975 are Russian-language general news from Lenta.ru, some dated 1914;
   - 8.56M are Reuters headlines (news and press releases, without bodies).
 - **Mismatched tickers.** 16.6% of nasdaq.com rows carry a title that names only other tickers, e.g. ticker AAPL with "Amazon (AMZN) Boosts Its Healthcare Efforts…".
+- **Astronomical prices with zero volume (D10).** Cumulative reverse-split adjustment inflates the early prices of serial reverse-splitters (TOPS up to 1.04·10¹⁵) and rounds their volume to 0. 90,273 rows in 107 series exceed 10,000. This is the anomaly reported in the original repository's issue #13.
 - **Placeholder and missing prices.**
   - 1.08M zero opens: missing values stored as 0.
   - Multi-year frozen, zero-volume stretches that end the day before a listing (WMC before its 2012 IPO, INVH before its 2017 IPO).
@@ -323,6 +324,22 @@ There are no invalid UTF-8 bytes, but text was mangled before FNSPID wrote it:
 
 ---
 
+### 3.10 D10: Astronomical historical prices with zero volume (cumulative reverse-split adjustment)
+
+- **Extent.**
+  - 90,273 price rows in 107 series have an open or close above 10,000, and 47,071 of them have zero volume. The largest is TOPS at 1.04·10¹⁵.
+  - Measured against each series' own recent level, finlint's `prices.level_blowup` check finds 134,791 rows in 151 series that sit more than 1000× above that level, 66,284 of them with zero volume.
+- **Mechanism.** The Yahoo series are adjusted for every later split. For a stock that reverse-split repeatedly, early prices are multiplied and volumes divided by the product of the split ratios.
+  - TOPS has 13 splits between its first and last FNSPID dates, with a product of 2.2·10⁻¹⁴. Its 2004-08-02 close of 5.16·10¹⁴ therefore corresponds to 11.37 dollars unadjusted, and the adjusted volume rounds to 0.
+  - The same calculation gives plausible unadjusted first prices for UVXY (34.30), WINT (16.25), VISL (0.65), PSHG (15.25) and TNXP (1.50).
+  - Three of the ten most extreme tickers could not be fetched. VHI is a separate 21-row anomaly.
+- **Effect.**
+  - Returns computed within these series are consistent.
+  - Price levels and volumes cannot be used as model inputs or in price/volume filters.
+  - They dominate cross-sectional statistics: the panel's mean open is 1.5·10¹⁰ (median 18.1), with a standard deviation of 2.9·10¹².
+  - This matches the symptoms reported in the original repository's issue #13 ("the price is extremely high, while the trading volume is zero"; the mean and standard deviation of opening prices are "unusually large").
+- **Reproduction.** `scripts/18_prices_extremes.py` writes `data/results/prices_extremes.json`; the finlint check is `prices.level_blowup`.
+
 ## 4. Downstream impact
 
 **Design.** We pre-specified the design, used no learned model and tuned nothing (`scripts/30_impact_experiment.py`).
@@ -384,6 +401,7 @@ There are no invalid UTF-8 bytes, but text was mangled before FNSPID wrote it:
 | Benzinga stamps 8 h early | `dt + offset` with a negative ET offset (wrong sign) | 55,986/55,986 rows vs upstream; session anchors best at +8 h |
 | Reuters stamps (from 2009-11-16) | New York wall-clock time labelled UTC (no conversion) | Session anchors best at +4 h (summer) / +5 h (winter); switch located from daily PR Newswire timing |
 | Look-ahead | Calendar-date merge (`normalize()` + `merge(on="Date")`) of date-only and late stamps | Code; 98.6% date-only; A vs B experiment |
+| Astronomical prices, zero volume (D10) | Yahoo adjusts history for all later splits: prices × 1/∏(split ratios), volumes ÷ the same factor | TOPS: 13 splits, product 2.2·10⁻¹⁴, unadjusted 2004 close 11.37; 6 of 7 checkable extreme tickers give plausible prices; the same pattern in an independent Yahoo download |
 | Price splices | Concatenation of Yahoo downloads with different adjustment vintages (about 2020-07 and 2023-12; others at 2015-01-02, 2020-04-02) | Split products vs Yahoo (288/301); *q* resets; adj = close on vintage end dates |
 | Truncated series | Tickers missing from the 2023 download keep only the old segment | Shared end dates; 46/55 verifiable continuations |
 | Ticker reuse | The 2023 download of a reassigned ticker is appended to the old company's 2020 segment | COHR, GEN; WMC/INVH with frozen bridges |
@@ -492,12 +510,12 @@ finlint join NEWS.csv PRICES.csv
 
 Exit status 1 means at least one error-level finding. `--json` writes the findings to a file.
 
-**Outputs.** On FNSPID, finlint flags D1–D4 and D8 (`data/results/finlint_*.txt`). On the references it behaves as a linter should:
+**Outputs.** On FNSPID, finlint flags D1–D4, D8 and D10 (`data/results/finlint_*.txt`). On the references it behaves as a linter should:
 
 | Input | Key result |
 |---|---|
-| FNSPID prices | Error: splice dates 2020-07-06 (2,532 factor resets, 329 jumps), 2020-04-02, 2015-01-02; error: 3,077 series end on 3 shared dates; warning: survivor-only (18 scattered ends in 62 years); warning: 1.08M zero opens; 115,188 stale runs |
-| Yahoo download of the 447 sampled tickers with data (2010–2023) | No splice dates, no gaps, no weekend rows. Flags 238 split-like jumps in Yahoo's own small-cap and ETN histories (e.g. VJET) |
+| FNSPID prices | Error: splice dates 2020-07-06 (2,532 factor resets, 329 jumps), 2020-04-02, 2015-01-02; error: 3,077 series end on 3 shared dates; warning: survivor-only (18 scattered ends in 62 years); warning: 1.08M zero opens; 115,188 stale runs; warning: level blowup, 134,791 rows in 151 series >1000× above their recent level (66,284 with zero volume; D10) |
+| Yahoo download of the 447 sampled tickers with data (2010–2023) | No splice dates, no gaps, no weekend rows. Flags 238 split-like jumps in Yahoo's own small-cap and ETN histories (e.g. VJET), and level blowups in 37 series (34,379 rows; TOPS, UVXY): D10 is inherited from Yahoo's cumulative reverse-split adjustment |
 | FNSPID Benzinga news | Error: timezone, 0% in window as labelled vs 99% at +8 h; error: 96.3% date-only |
 | Upstream Kaggle Benzinga file | Timezone passes: 99% of 4,070 anchored headlines in window as labelled |
 | FNSPID nasdaq.com rows | Error: 98.9% date-only |

@@ -19,6 +19,7 @@ run scripts/15_prices_release.py                         # release/prices_rc.par
 run scripts/26_price_factors.py                          # release/price_factors.parquet (distributable; no prices)
 run scripts/16_prices_release_validate.py                # repaired columns vs Yahoo
 run scripts/17_prices_quality.py                         # placeholder runs, NaN/zero rows, layouts
+run scripts/18_prices_extremes.py                        # D10: reverse-split level blowups (yfinance splits; cached)
 run scripts/20_news_stream.py --file 0                   # stream All_external.csv (5.7 GB)
 run scripts/20_news_stream.py --file 1                   # stream nasdaq_exteral_data.csv (23 GB)
 run scripts/21_news_audit.py                             # composition, duplicates, tickers, encoding

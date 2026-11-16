@@ -21,12 +21,15 @@ All counts come from the full dataset (28.6M news records, 29.7M price rows), ch
    - The splice is at 2020-07-06. Examples: AAPL 364.11 → 93.46, TSLA 1208.66 → 91.44.
    - 329 series jump or fall by more than 2× on that day.
    - About 3,000 series stop in 2020.
-   - This explains the "abnormal prices" reported in the original repository's issue #13.
-4. **Duplicated and off-topic rows.**
+4. **Astronomical prices with zero volume.**
+   - Yahoo adjusts the early prices of serial reverse-splitters by the cumulative split product: TOPS reaches 1.04·10¹⁵, and the adjusted volumes round to 0.
+   - 90,273 rows in 107 series exceed 10,000.
+   - This is the anomaly reported in the original repository's issue #13. It is inherited from Yahoo's adjustment, and an independent Yahoo download shows the same pattern.
+5. **Duplicated and off-topic rows.**
    - `nasdaq_exteral_data.csv` contains every record of `All_external.csv`, so concatenating the two files double-counts 13.0M rows.
    - About 0.8M rows are Russian-language Lenta.ru news with no ticker.
    - 16.6% of nasdaq.com titles name only other tickers.
-5. **Price-file quality.** 1.08M opens stored as 0, frozen placeholder prices, ticker-reuse splices, two column layouts, and mojibake.
+6. **Price-file quality.** 1.08M opens stored as 0, frozen placeholder prices, ticker-reuse splices, two column layouts, and mojibake.
 
 ## Why it matters
 
@@ -76,7 +79,11 @@ finlint news   path/to/news.parquet
 finlint join   path/to/news.parquet path/to/prices.parquet
 ```
 
-It flags every defect class above on FNSPID, and is clean on the upstream timestamps and on the Yahoo reference data. Run the tests with `pytest finlint`.
+- On FNSPID it flags every defect class above.
+- On the upstream Kaggle timestamps, the timezone check passes.
+- On an independent Yahoo download, it finds no splice dates. It still flags the split-like jumps and reverse-split level blowups that come from Yahoo's own adjustment.
+
+Run the tests with `pytest finlint`.
 
 ## Reproducing
 

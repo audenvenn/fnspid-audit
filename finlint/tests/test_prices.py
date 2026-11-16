@@ -105,3 +105,24 @@ def test_zero_open_reported_separately(clean_panel):
     f = by_check(prices.run_all(df))
     assert f["prices.zero_as_missing"].metrics["zero_open"] == 10
     assert f["prices.ohlc_consistency"].metrics["rows"] == 0
+
+
+def test_level_blowup_from_cumulative_reverse_splits(clean_panel):
+    """A serial reverse-splitter adjusted by its later split product: early prices ~1e6x the recent level and
+    volumes divided down to 0. The clean panel must not trigger the check."""
+    from finlint import prices
+    clean = prices.run_all(clean_panel)
+    assert not [f for f in clean if f.check == "prices.level_blowup"]
+    df = clean_panel.copy()
+    t0 = df["ticker"].iloc[0]
+    m = df["ticker"] == t0
+    idx = df.index[m][:100]                      # first 100 rows of one series, before 1:10^6 of reverse splits
+    df.loc[idx, ["close", "adj_close"]] *= 1e6
+    for c in ("open", "high", "low"):
+        if c in df:
+            df.loc[idx, c] *= 1e6
+    df.loc[idx, "volume"] = 0
+    out = [f for f in prices.run_all(df) if f.check == "prices.level_blowup"]
+    assert len(out) == 1
+    assert out[0].metrics["rows"] == 100 and out[0].metrics["zero_volume_rows"] == 100
+    assert out[0].metrics["series"] == 1

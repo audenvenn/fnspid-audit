@@ -1,0 +1,149 @@
+{
+ "threshold": 10000.0,
+ "rows_above": 90273,
+ "tickers_above": 107,
+ "rows_above_zero_volume": 47071,
+ "open_mean": 15077618750.678762,
+ "open_std": 2883900391557.3574,
+ "open_max": 1094990369390592.0,
+ "open_median": 18.07999992370605,
+ "top_tickers": [
+  {
+   "ticker": "TOPS",
+   "rows": 3250,
+   "max_close": 1041012025720832.0,
+   "zero_volume": 3248
+  },
+  {
+   "ticker": "UVXY",
+   "rows": 1134,
+   "max_close": 20579999744.0,
+   "zero_volume": 241
+  },
+  {
+   "ticker": "CEI",
+   "rows": 2840,
+   "max_close": 10156250112.0,
+   "zero_volume": 2781
+  },
+  {
+   "ticker": "VHI",
+   "rows": 21,
+   "max_close": 69513616.0,
+   "zero_volume": 0
+  },
+  {
+   "ticker": "WINT",
+   "rows": 4886,
+   "max_close": 30712500.0,
+   "zero_volume": 2235
+  },
+  {
+   "ticker": "VISL",
+   "rows": 816,
+   "max_close": 13680000.0,
+   "zero_volume": 736
+  },
+  {
+   "ticker": "PSHG",
+   "rows": 1613,
+   "max_close": 11298420.0,
+   "zero_volume": 1270
+  },
+  {
+   "ticker": "INPX",
+   "rows": 1386,
+   "max_close": 10530000.0,
+   "zero_volume": 1333
+  },
+  {
+   "ticker": "TNXP",
+   "rows": 598,
+   "max_close": 6000000.0,
+   "zero_volume": 453
+  },
+  {
+   "ticker": "ABIO",
+   "rows": 2730,
+   "max_close": 5726700.0,
+   "zero_volume": 257
+  }
+ ],
+ "split_checks": [
+  {
+   "ticker": "TOPS",
+   "first_date": "2004-08-02",
+   "first_close": 515743196119040.0,
+   "first_volume": 0.0,
+   "n_splits_in_span": 13,
+   "split_product_in_span": 2.204585537918872e-14,
+   "first_close_times_split_product": 11.369999914440921
+  },
+  {
+   "ticker": "UVXY",
+   "first_date": "2011-10-04",
+   "first_close": 20579999744.0,
+   "first_volume": 0.0,
+   "n_splits_in_span": 11,
+   "split_product_in_span": 1.6666666666666675e-09,
+   "first_close_times_split_product": 34.29999957333335
+  },
+  {
+   "ticker": "CEI",
+   "error": "'NoneType' object has no attribute 'items'"
+  },
+  {
+   "ticker": "VHI",
+   "first_date": "1980-03-17",
+   "first_close": 4.109000205993652,
+   "first_volume": 5476.0,
+   "n_splits_in_span": 3,
+   "split_product_in_span": 0.6084205402774396,
+   "first_close_times_split_product": 2.500000125330769
+  },
+  {
+   "ticker": "WINT",
+   "first_date": "1995-08-07",
+   "first_close": 30712500.0,
+   "first_volume": 0.0,
+   "n_splits_in_span": 6,
+   "split_product_in_span": 5.291005291005291e-07,
+   "first_close_times_split_product": 16.25
+  },
+  {
+   "ticker": "VISL",
+   "first_date": "2012-04-18",
+   "first_close": 936000.0,
+   "first_volume": 0.0,
+   "n_splits_in_span": 6,
+   "split_product_in_span": 6.944444444444445e-07,
+   "first_close_times_split_product": 0.65
+  },
+  {
+   "ticker": "PSHG",
+   "first_date": "2011-01-03",
+   "first_close": 11298420.0,
+   "first_volume": 0.0,
+   "n_splits_in_span": 7,
+   "split_product_in_span": 1.3497462477054312e-06,
+   "first_close_times_split_product": 15.249999999999998
+  },
+  {
+   "ticker": "INPX",
+   "error": "'NoneType' object has no attribute 'items'"
+  },
+  {
+   "ticker": "TNXP",
+   "first_date": "2012-05-10",
+   "first_close": 6000000.0,
+   "first_volume": 0.0,
+   "n_splits_in_span": 6,
+   "split_product_in_span": 2.500000000000001e-07,
+   "first_close_times_split_product": 1.5000000000000007
+  },
+  {
+   "ticker": "ABIO",
+   "error": "'NoneType' object has no attribute 'items'"
+  }
+ ]
+}

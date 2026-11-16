@@ -148,6 +148,33 @@
   ]
  },
  {
+  "check": "prices.level_blowup",
+  "severity": "warn",
+  "message": "134,791 rows in 151 series sit >1000x above the series' recent level (66,284 with zero volume): cumulative reverse-split adjustment suspected; price levels and volumes are unusable as features (returns unaffected)",
+  "metrics": {
+   "rows": 134791,
+   "series": 151,
+   "zero_volume_rows": 66284
+  },
+  "examples": [
+   {
+    "ticker": "TOPS",
+    "max_ratio": 117231082466756.67,
+    "max_close": 1041012025720832.0
+   },
+   {
+    "ticker": "CEI",
+    "max_ratio": 11741329479.798794,
+    "max_close": 10156250112.0
+   },
+   {
+    "ticker": "UVXY",
+    "max_ratio": 1043081612.8476872,
+    "max_close": 20579999744.0
+   }
+  ]
+ },
+ {
   "check": "prices.split_like_jumps",
   "severity": "error",
   "message": "31,000 moves beyond +100%/-50% in 1,544 series; 4,845 look like unadjusted splits, 25,736 revert (bad ticks)",
