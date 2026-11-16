@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "finlint"
+version = "0.1.0"
+description = "Data linter for free financial news + price datasets: splices, splits, timezone sanity, date-only news, coverage breaks, duplicates, look-ahead risk."
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "pandas>=2.0"]
+license = {text = "Apache-2.0"}
+
+[project.optional-dependencies]
+parquet = ["pyarrow>=12"]
+test = ["pytest>=7"]
+
+[project.scripts]
+finlint = "finlint.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

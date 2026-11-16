@@ -1,0 +1,14 @@
+finlint join: FNSPID Benzinga news -> FNSPID prices (same-date merge)
+=====================================================================
+3 error(s), 0 warning(s), 1 info
+[ERROR] lookahead.date_only_same_day: 1,018,338 of 1,018,338 joined date-only rows (100.0%) feed their own calendar day (or earlier); with an after-close share of 14% that is ~138,526 leaking rows
+        joined_date_only=1,018,338, same_day=1,018,338, before_own_date=0, after_close_prior=0.136, expected_leaking=138,526
+[ERROR] lookahead.timed_after_cutoff: 3,789 of 33,878 joined timed rows (11.2%) were published after the close of the session they feed
+        joined_timed=33,878, leaking=3,789, share=0.1118
+[ERROR] news.timezone_sessions: session-anchored headlines fit their session only 0% of the time as labelled (UTC) but 99% if stamps are shifted by +8 h: timestamps look mis-converted
+        rows=4,070, in_window_as_labelled=0.00344, best_shift_h=8, in_window_best=0.986
+        e.g. shift_h=8, n=4,070, in_window=0.986
+        e.g. shift_h=7, n=4,070, in_window=0.9794
+        e.g. shift_h=9, n=4,070, in_window=0.9086
+[INFO ] lookahead.summary: 1,052,216 joined rows: 3,789 certainly look-ahead, 1,018,338 unverifiable (date-only, same day), 0 later than necessary
+        joined=1,052,216, certain_lookahead=3,789, unverifiable=1,018,338, late=0

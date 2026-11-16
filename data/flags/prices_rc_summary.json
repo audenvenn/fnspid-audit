@@ -1,0 +1,777 @@
+{
+ "rows": 29677722,
+ "rows_by_status": {
+  "repaired_assumed_no_split": 23181187,
+  "latest_vintage": 4242585,
+  "repaired_confirmed": 1378249,
+  "unrepaired_break": 835106,
+  "single_vintage": 40595
+ },
+ "boundaries": 23186,
+ "boundaries_by_status": {
+  "assumed_no_split": 21343,
+  "confirmed": 1479,
+  "unconfirmed": 364
+ },
+ "boundaries_by_date_status": [
+  {
+   "boundary_date": "2015-01-02",
+   "status": "assumed_no_split",
+   "n": "4422"
+  },
+  {
+   "boundary_date": "2015-01-02",
+   "status": "confirmed",
+   "n": "291"
+  },
+  {
+   "boundary_date": "2015-01-02",
+   "status": "unconfirmed",
+   "n": "29"
+  },
+  {
+   "boundary_date": "2015-01-05",
+   "status": "assumed_no_split",
+   "n": "26"
+  },
+  {
+   "boundary_date": "2015-01-05",
+   "status": "unconfirmed",
+   "n": "3"
+  },
+  {
+   "boundary_date": "2015-01-06",
+   "status": "assumed_no_split",
+   "n": "3"
+  },
+  {
+   "boundary_date": "2015-01-07",
+   "status": "assumed_no_split",
+   "n": "3"
+  },
+  {
+   "boundary_date": "2015-01-08",
+   "status": "assumed_no_split",
+   "n": "5"
+  },
+  {
+   "boundary_date": "2015-01-09",
+   "status": "assumed_no_split",
+   "n": "3"
+  },
+  {
+   "boundary_date": "2015-01-12",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-01-12",
+   "status": "unconfirmed",
+   "n": "2"
+  },
+  {
+   "boundary_date": "2015-01-13",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-01-14",
+   "status": "assumed_no_split",
+   "n": "2"
+  },
+  {
+   "boundary_date": "2015-01-15",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-01-20",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-01-21",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-01-29",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-01-30",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-02-03",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-02-04",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-02-04",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-02-05",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-02-24",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-02-25",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-03-09",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-03-27",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-04-16",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-07-23",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-08-04",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-09-17",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-10-05",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-11-03",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2015-12-31",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2016-01-22",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2016-01-27",
+   "status": "unconfirmed",
+   "n": "2"
+  },
+  {
+   "boundary_date": "2016-06-14",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2016-06-23",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2017-06-14",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2017-07-31",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2017-10-19",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2017-10-26",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2017-12-12",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2018-02-01",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2018-06-29",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2018-10-04",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2019-04-10",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2019-05-10",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2019-08-08",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2019-08-27",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-04-02",
+   "status": "assumed_no_split",
+   "n": "6424"
+  },
+  {
+   "boundary_date": "2020-04-02",
+   "status": "confirmed",
+   "n": "424"
+  },
+  {
+   "boundary_date": "2020-04-02",
+   "status": "unconfirmed",
+   "n": "56"
+  },
+  {
+   "boundary_date": "2020-04-03",
+   "status": "assumed_no_split",
+   "n": "73"
+  },
+  {
+   "boundary_date": "2020-04-03",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-04-06",
+   "status": "assumed_no_split",
+   "n": "52"
+  },
+  {
+   "boundary_date": "2020-04-07",
+   "status": "assumed_no_split",
+   "n": "21"
+  },
+  {
+   "boundary_date": "2020-04-07",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-04-08",
+   "status": "assumed_no_split",
+   "n": "13"
+  },
+  {
+   "boundary_date": "2020-04-08",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-04-09",
+   "status": "assumed_no_split",
+   "n": "5"
+  },
+  {
+   "boundary_date": "2020-04-13",
+   "status": "assumed_no_split",
+   "n": "8"
+  },
+  {
+   "boundary_date": "2020-04-14",
+   "status": "assumed_no_split",
+   "n": "13"
+  },
+  {
+   "boundary_date": "2020-04-15",
+   "status": "assumed_no_split",
+   "n": "3"
+  },
+  {
+   "boundary_date": "2020-04-16",
+   "status": "assumed_no_split",
+   "n": "5"
+  },
+  {
+   "boundary_date": "2020-04-17",
+   "status": "assumed_no_split",
+   "n": "3"
+  },
+  {
+   "boundary_date": "2020-04-20",
+   "status": "assumed_no_split",
+   "n": "2"
+  },
+  {
+   "boundary_date": "2020-04-21",
+   "status": "assumed_no_split",
+   "n": "2"
+  },
+  {
+   "boundary_date": "2020-04-22",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-04-23",
+   "status": "assumed_no_split",
+   "n": "4"
+  },
+  {
+   "boundary_date": "2020-04-24",
+   "status": "assumed_no_split",
+   "n": "2"
+  },
+  {
+   "boundary_date": "2020-04-24",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-04-27",
+   "status": "assumed_no_split",
+   "n": "2"
+  },
+  {
+   "boundary_date": "2020-04-28",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-04-29",
+   "status": "assumed_no_split",
+   "n": "3"
+  },
+  {
+   "boundary_date": "2020-04-30",
+   "status": "assumed_no_split",
+   "n": "3"
+  },
+  {
+   "boundary_date": "2020-04-30",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-05-05",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-05-08",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-05-11",
+   "status": "assumed_no_split",
+   "n": "2"
+  },
+  {
+   "boundary_date": "2020-05-11",
+   "status": "unconfirmed",
+   "n": "3"
+  },
+  {
+   "boundary_date": "2020-05-14",
+   "status": "assumed_no_split",
+   "n": "2"
+  },
+  {
+   "boundary_date": "2020-05-22",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-05-26",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-05-27",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-05-28",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-06-01",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-06-05",
+   "status": "unconfirmed",
+   "n": "3"
+  },
+  {
+   "boundary_date": "2020-06-09",
+   "status": "unconfirmed",
+   "n": "2"
+  },
+  {
+   "boundary_date": "2020-06-12",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-06-18",
+   "status": "assumed_no_split",
+   "n": "2"
+  },
+  {
+   "boundary_date": "2020-06-19",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-06-22",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-06-25",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-06-26",
+   "status": "unconfirmed",
+   "n": "2"
+  },
+  {
+   "boundary_date": "2020-06-29",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-06-30",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-07-01",
+   "status": "unconfirmed",
+   "n": "2"
+  },
+  {
+   "boundary_date": "2020-07-02",
+   "status": "assumed_no_split",
+   "n": "6315"
+  },
+  {
+   "boundary_date": "2020-07-02",
+   "status": "confirmed",
+   "n": "383"
+  },
+  {
+   "boundary_date": "2020-07-02",
+   "status": "unconfirmed",
+   "n": "46"
+  },
+  {
+   "boundary_date": "2020-07-06",
+   "status": "assumed_no_split",
+   "n": "3889"
+  },
+  {
+   "boundary_date": "2020-07-06",
+   "status": "confirmed",
+   "n": "381"
+  },
+  {
+   "boundary_date": "2020-07-06",
+   "status": "unconfirmed",
+   "n": "142"
+  },
+  {
+   "boundary_date": "2020-07-31",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-09-21",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-10-28",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-11-25",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2020-12-09",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2021-01-04",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2021-03-01",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2021-04-05",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2021-05-03",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2021-05-18",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2021-05-26",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2021-06-09",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2021-06-18",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2021-07-01",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2021-08-09",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2021-08-11",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2021-09-16",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2021-10-14",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2021-11-02",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2021-11-11",
+   "status": "unconfirmed",
+   "n": "2"
+  },
+  {
+   "boundary_date": "2021-12-06",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2021-12-06",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2022-01-04",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2022-02-15",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2022-03-21",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2022-03-31",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2022-04-04",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2022-04-13",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2022-08-22",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2022-09-16",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2022-09-20",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2022-09-23",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2022-12-01",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2022-12-02",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2022-12-19",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2023-01-20",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2023-03-29",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2023-06-02",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2023-06-08",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2023-09-01",
+   "status": "assumed_no_split",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2023-09-20",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2023-10-09",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2023-10-17",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2023-10-25",
+   "status": "unconfirmed",
+   "n": "1"
+  },
+  {
+   "boundary_date": "2023-11-02",
+   "status": "assumed_no_split",
+   "n": "1"
+  }
+ ],
+ "confirmed_nontrivial_split_factor": 344,
+ "series": 7693,
+ "series_by_status": {
+  "assumed_no_split": 6858,
+  "confirmed": 374,
+  "unconfirmed": 319,
+  "single_vintage": 142
+ },
+ "series_end_cluster": 3077,
+ "series_end_cluster_listed_2026": 1264,
+ "unconfirmed_detail": {
+  "no_yahoo": 325,
+  "yahoo_missing_dates": 20,
+  "ratio_unstable": 12,
+  "no_split_product_match": 7
+ },
+ "extreme_moves_on_boundary_dates_before": 452,
+ "extreme_moves_on_boundary_dates_after_repair_finite": 1,
+ "extreme_moves_on_boundary_dates_left_unrepaired": 31
+}

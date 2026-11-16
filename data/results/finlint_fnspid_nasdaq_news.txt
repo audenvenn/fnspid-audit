@@ -1,0 +1,18 @@
+finlint news: FNSPID nasdaq_exteral_data.csv, nasdaq.com rows
+=============================================================
+1 error(s), 3 warning(s), 2 info
+[ERROR] news.date_only_share: 98.9% of 2,491,785 timestamps carry no time of day (00:00:00); a same-date news->price merge cannot tell pre- from post-close news
+        rows=2,491,785, date_only=2,465,162, share=0.9893, unparseable=0
+[WARN ] news.duplicate_ticker_title_time: 24,088 repeated (ticker/title/date) keys (0.97%)
+        rows=24,088
+[WARN ] news.duplicate_ticker_url: 3,210 repeated (ticker/url) pairs (0.13%)
+        rows=3,210
+[WARN ] news.exact_duplicate_rows: 3,206 exact duplicate rows (0.13%)
+        rows=3,206, share=0.001287
+[INFO ] news.hour_profile: timed rows in New York time: 13.3% at 00-04h, 30.5% during 09:30-16:00, 36.5% after 16:00
+        timed_rows=26,623, share_00_04=0.1329, share_rth=0.3052, share_after_close=0.3649, weekend_share=0.8278
+[INFO ] news.timezone_sessions: 15% of 176 session-anchored headlines fall in their session as labelled (UTC)
+        rows=176, in_window_as_labelled=0.1534, best_shift_h=-9, in_window_best=0.3295
+        e.g. shift_h=-9, n=176, in_window=0.3295
+        e.g. shift_h=-8, n=176, in_window=0.3182
+        e.g. shift_h=-6, n=176, in_window=0.3068

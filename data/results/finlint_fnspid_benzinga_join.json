@@ -1,0 +1,66 @@
+[
+ {
+  "check": "news.timezone_sessions",
+  "severity": "error",
+  "message": "session-anchored headlines fit their session only 0% of the time as labelled (UTC) but 99% if stamps are shifted by +8 h: timestamps look mis-converted",
+  "metrics": {
+   "rows": 4070,
+   "in_window_as_labelled": 0.0034398034398034397,
+   "best_shift_h": 8,
+   "in_window_best": 0.985995085995086
+  },
+  "examples": [
+   {
+    "shift_h": 8,
+    "n": 4070,
+    "in_window": 0.985995085995086
+   },
+   {
+    "shift_h": 7,
+    "n": 4070,
+    "in_window": 0.9793611793611794
+   },
+   {
+    "shift_h": 9,
+    "n": 4070,
+    "in_window": 0.9085995085995086
+   }
+  ]
+ },
+ {
+  "check": "lookahead.timed_after_cutoff",
+  "severity": "error",
+  "message": "3,789 of 33,878 joined timed rows (11.2%) were published after the close of the session they feed",
+  "metrics": {
+   "joined_timed": 33878,
+   "leaking": 3789,
+   "share": 0.11184249365369857
+  },
+  "examples": []
+ },
+ {
+  "check": "lookahead.date_only_same_day",
+  "severity": "error",
+  "message": "1,018,338 of 1,018,338 joined date-only rows (100.0%) feed their own calendar day (or earlier); with an after-close share of 14% that is ~138,526 leaking rows",
+  "metrics": {
+   "joined_date_only": 1018338,
+   "same_day": 1018338,
+   "before_own_date": 0,
+   "after_close_prior": 0.13603157875935484,
+   "expected_leaking": 138526.1258506439
+  },
+  "examples": []
+ },
+ {
+  "check": "lookahead.summary",
+  "severity": "info",
+  "message": "1,052,216 joined rows: 3,789 certainly look-ahead, 1,018,338 unverifiable (date-only, same day), 0 later than necessary",
+  "metrics": {
+   "joined": 1052216,
+   "certain_lookahead": 3789,
+   "unverifiable": 1018338,
+   "late": 0
+  },
+  "examples": []
+ }
+]

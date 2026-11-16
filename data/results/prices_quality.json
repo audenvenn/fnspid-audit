@@ -1,0 +1,110 @@
+{
+ "placeholder_runs_ge250_zero_volume": {
+  "runs": 28,
+  "rows": 17483,
+  "series": 25,
+  "longest": [
+   {
+    "ticker": "WMC",
+    "start": "2005-06-23",
+    "end": "2012-05-09",
+    "rows": "1733",
+    "close": "24.14999961853028",
+    "series_start": "1998-07-31",
+    "next_date": "2012-05-10",
+    "next_close": "187.6999969482422",
+    "next_volume": "738883.0"
+   },
+   {
+    "ticker": "GRAF",
+    "start": "2012-07-02",
+    "end": "2018-03-02",
+    "rows": "1381",
+    "close": "1.0299999713897705",
+    "series_start": "2000-04-11",
+    "next_date": "2018-10-26",
+    "next_close": "9.520000457763672",
+    "next_volume": "202100.0"
+   },
+   {
+    "ticker": "HUBB",
+    "start": "1973-02-21",
+    "end": "1977-08-05",
+    "rows": "1127",
+    "close": "3.2636098861694336",
+    "series_start": "1972-06-05",
+    "next_date": "1977-08-09",
+    "next_close": "2.7953269481658936",
+    "next_volume": "0.0"
+   },
+   {
+    "ticker": "INVH",
+    "start": "2011-03-17",
+    "end": "2017-01-31",
+    "rows": "1035",
+    "close": "0.2199999988079071",
+    "series_start": "2005-10-25",
+    "next_date": "2017-02-01",
+    "next_close": "20.0",
+    "next_volume": "30833000.0"
+   },
+   {
+    "ticker": "HUBB",
+    "start": "1977-08-09",
+    "end": "1981-02-10",
+    "rows": "887",
+    "close": "2.7953269481658936",
+    "series_start": "1972-06-05",
+    "next_date": "1981-02-11",
+    "next_close": "3.574838161468506",
+    "next_volume": "24000.0"
+   },
+   {
+    "ticker": "EAI",
+    "start": "2011-01-21",
+    "end": "2015-10-05",
+    "rows": "789",
+    "close": "63.09999847412109",
+    "series_start": "2007-12-17",
+    "next_date": "2016-08-03",
+    "next_close": "74.45999908447266",
+    "next_volume": "0.0"
+   },
+   {
+    "ticker": "SVT",
+    "start": "1978-12-15",
+    "end": "1981-11-02",
+    "rows": "728",
+    "close": "0.3361879885196686",
+    "series_start": "1973-05-03",
+    "next_date": "1981-11-03",
+    "next_close": "1.6249109506607056",
+    "next_volume": "5131.0"
+   },
+   {
+    "ticker": "tex",
+    "start": "1982-06-29",
+    "end": "1985-04-24",
+    "rows": "715",
+    "close": "1.100000023841858",
+    "series_start": "1980-03-19",
+    "next_date": "1985-04-25",
+    "next_close": "0.800000011920929",
+    "next_volume": "5000.0"
+   }
+  ]
+ },
+ "nan_close_rows": 257,
+ "weekend_rows": 5,
+ "weekend_rows_nan_close": 5,
+ "all_zero_ohlc_rows": 18,
+ "zero_open_rows": 1081474,
+ "zero_open_rows_before_1993": 1077237,
+ "header_layouts": {
+  "date,volume,open,high,low,close,adj close": 5705,
+  "date,open,high,low,close,adj close,volume": 1988
+ },
+ "lowercase_ticker_files": 259,
+ "lowercase_with_uppercase_twin": 0,
+ "files": 7693
+}

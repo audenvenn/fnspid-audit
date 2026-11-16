@@ -1,0 +1,28 @@
+finlint prices: independent Yahoo download of the sampled tickers (2010-2023)
+=============================================================================
+1 error(s), 3 warning(s), 4 info
+[ERROR] prices.split_like_jumps: 360 moves beyond +100%/-50% in 118 series; 238 look like unadjusted splits, 122 revert (bad ticks)
+        jumps=360, series=118, kind_split_like=238, kind_spike=122
+        e.g. ticker=ABEO, date=2015-05-05, r=2.087, split_k=0.5
+        e.g. ticker=ADXN, date=2022-06-17, r=0.4484, split_k=2
+        e.g. ticker=AEMD, date=2021-06-09, r=4.882, split_k=0.2
+[WARN ] prices.ohlc_consistency: 15 rows (non-zero prices) violate low <= open,close <= high
+        rows=15, share=1.204e-05
+        e.g. ticker=AMPE, date=2023-06-05, open=5.800000190734863, high=6.199999809265137, low=5.9019999504089355, close=6.133999824523926
+        e.g. ticker=CIG-C, date=2021-05-05, open=1.5325440168380737, high=1.6094670295715332, low=1.5384609699249268, close=1.6094670295715332
+        e.g. ticker=CREG, date=2012-02-10, open=11300.0, high=12000.0, low=11525.0, close=11692.0
+[WARN ] prices.stale_runs: 1,893 runs of >= 5 identical closes (17,068 rows); 57,058 zero-volume rows
+        runs=1,893, rows_in_runs=17,068, share_rows=0.0137, series_with_runs=149, zero_volume_rows=57,058
+        e.g. ticker=KGJI, start=2023-02-27, len=212
+        e.g. ticker=GLBS, start=2010-02-22, len=183
+        e.g. ticker=KGJI, start=2021-09-17, len=139
+[WARN ] prices.survivorship_hint: only 0 of 447 series (0.00%) end at scattered dates over a 14-year panel: delisted securities are probably missing (survivor-only universe)
+        scattered_end_series=0, series=447, years=14
+[INFO ] prices.duplicates: no duplicate (ticker, date) rows
+        dup_rows=0
+[INFO ] prices.internal_gaps: 0 within-series gaps longer than 30 calendar days in 0 series
+        gaps=0, series=0
+[INFO ] prices.splice_dates: no cross-sectional break dates
+        dates=0
+[INFO ] prices.weekend_rows: 0 rows dated on Saturday/Sunday
+        rows=0, dates=0

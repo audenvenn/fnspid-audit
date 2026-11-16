@@ -1,0 +1,34 @@
+{
+ "url_date": {
+  "rows_with_url_date": 1092520,
+  "share_of_nasdaq_rows": 0.4384487425680787,
+  "nasdaq_rows": 2491785,
+  "stamp_minus_url_days": {
+   "0": 1084267,
+   "-1": 8251,
+   "17": 1,
+   "16": 1
+  },
+  "equal_share": 0.9924459048804598,
+  "minus1_by_year": {
+   "2019": 2368,
+   "2020": 2997,
+   "2021": 2886
+  },
+  "minus1_date_only_share": 1.0,
+  "minus1_earnings_call_transcripts": 3604,
+  "transcripts_with_url_date": 13704,
+  "transcripts_stamped_minus1_share": 0.2629889083479276
+ },
+ "weekday_check": {
+  "rows": 3919,
+  "same_weekday_share": 0.93289104363358,
+  "named_is_next_day_share": 0.01607552947180403,
+  "named_is_previous_day_share": 0.006889512630773156
+ },
+ "benzinga_url_month": {
+  "rows": 1448799,
+  "date_only_equal_share": 0.9998836934647932,
+  "timed_equal_share": 0.9998211986840223
+ }
+}

@@ -1,0 +1,146 @@
+[
+ {
+  "check": "prices.duplicates",
+  "severity": "info",
+  "message": "no duplicate (ticker, date) rows",
+  "metrics": {
+   "dup_rows": 0
+  },
+  "examples": []
+ },
+ {
+  "check": "prices.ohlc_consistency",
+  "severity": "warn",
+  "message": "15 rows (non-zero prices) violate low <= open,close <= high",
+  "metrics": {
+   "rows": 15,
+   "share": 1.2036156614469868e-05
+  },
+  "examples": [
+   {
+    "ticker": "AMPE",
+    "date": "2023-06-05",
+    "open": "5.800000190734863",
+    "high": "6.199999809265137",
+    "low": "5.9019999504089355",
+    "close": "6.133999824523926"
+   },
+   {
+    "ticker": "CIG-C",
+    "date": "2021-05-05",
+    "open": "1.5325440168380737",
+    "high": "1.6094670295715332",
+    "low": "1.5384609699249268",
+    "close": "1.6094670295715332"
+   },
+   {
+    "ticker": "CREG",
+    "date": "2012-02-10",
+    "open": "11300.0",
+    "high": "12000.0",
+    "low": "11525.0",
+    "close": "11692.0"
+   }
+  ]
+ },
+ {
+  "check": "prices.weekend_rows",
+  "severity": "info",
+  "message": "0 rows dated on Saturday/Sunday",
+  "metrics": {
+   "rows": 0,
+   "dates": 0
+  },
+  "examples": []
+ },
+ {
+  "check": "prices.stale_runs",
+  "severity": "warn",
+  "message": "1,893 runs of >= 5 identical closes (17,068 rows); 57,058 zero-volume rows",
+  "metrics": {
+   "runs": 1893,
+   "rows_in_runs": 17068,
+   "share_rows": 0.01369554140638478,
+   "series_with_runs": 149,
+   "zero_volume_rows": 57058
+  },
+  "examples": [
+   {
+    "ticker": "KGJI",
+    "start": "2023-02-27",
+    "len": 212
+   },
+   {
+    "ticker": "GLBS",
+    "start": "2010-02-22",
+    "len": 183
+   },
+   {
+    "ticker": "KGJI",
+    "start": "2021-09-17",
+    "len": 139
+   }
+  ]
+ },
+ {
+  "check": "prices.split_like_jumps",
+  "severity": "error",
+  "message": "360 moves beyond +100%/-50% in 118 series; 238 look like unadjusted splits, 122 revert (bad ticks)",
+  "metrics": {
+   "jumps": 360,
+   "series": 118,
+   "kind_split_like": 238,
+   "kind_spike": 122
+  },
+  "examples": [
+   {
+    "ticker": "ABEO",
+    "date": "2015-05-05",
+    "r": 2.0874,
+    "split_k": 0.5
+   },
+   {
+    "ticker": "ADXN",
+    "date": "2022-06-17",
+    "r": 0.4484,
+    "split_k": 2.0
+   },
+   {
+    "ticker": "AEMD",
+    "date": "2021-06-09",
+    "r": 4.8824,
+    "split_k": 0.2
+   }
+  ]
+ },
+ {
+  "check": "prices.splice_dates",
+  "severity": "info",
+  "message": "no cross-sectional break dates",
+  "metrics": {
+   "dates": 0
+  },
+  "examples": []
+ },
+ {
+  "check": "prices.survivorship_hint",
+  "severity": "warn",
+  "message": "only 0 of 447 series (0.00%) end at scattered dates over a 14-year panel: delisted securities are probably missing (survivor-only universe)",
+  "metrics": {
+   "scattered_end_series": 0,
+   "series": 447,
+   "years": 14.0
+  },
+  "examples": []
+ },
+ {
+  "check": "prices.internal_gaps",
+  "severity": "info",
+  "message": "0 within-series gaps longer than 30 calendar days in 0 series",
+  "metrics": {
+   "gaps": 0,
+   "series": 0
+  },
+  "examples": []
+ }
+]

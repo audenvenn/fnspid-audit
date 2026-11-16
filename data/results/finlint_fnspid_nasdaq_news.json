@@ -1,0 +1,83 @@
+[
+ {
+  "check": "news.date_only_share",
+  "severity": "error",
+  "message": "98.9% of 2,491,785 timestamps carry no time of day (00:00:00); a same-date news->price merge cannot tell pre- from post-close news",
+  "metrics": {
+   "rows": 2491785,
+   "date_only": 2465162,
+   "share": 0.989315691361815,
+   "unparseable": 0
+  },
+  "examples": []
+ },
+ {
+  "check": "news.hour_profile",
+  "severity": "info",
+  "message": "timed rows in New York time: 13.3% at 00-04h, 30.5% during 09:30-16:00, 36.5% after 16:00",
+  "metrics": {
+   "timed_rows": 26623,
+   "share_00_04": 0.13293017315854713,
+   "share_rth": 0.30522480561920146,
+   "share_after_close": 0.36491004019081247,
+   "weekend_share": 0.827780490553281
+  },
+  "examples": []
+ },
+ {
+  "check": "news.timezone_sessions",
+  "severity": "info",
+  "message": "15% of 176 session-anchored headlines fall in their session as labelled (UTC)",
+  "metrics": {
+   "rows": 176,
+   "in_window_as_labelled": 0.1534090909090909,
+   "best_shift_h": -9,
+   "in_window_best": 0.32954545454545453
+  },
+  "examples": [
+   {
+    "shift_h": -9,
+    "n": 176,
+    "in_window": 0.32954545454545453
+   },
+   {
+    "shift_h": -8,
+    "n": 176,
+    "in_window": 0.3181818181818182
+   },
+   {
+    "shift_h": -6,
+    "n": 176,
+    "in_window": 0.3068181818181818
+   }
+  ]
+ },
+ {
+  "check": "news.exact_duplicate_rows",
+  "severity": "warn",
+  "message": "3,206 exact duplicate rows (0.13%)",
+  "metrics": {
+   "rows": 3206,
+   "share": 0.001286627859145151
+  },
+  "examples": []
+ },
+ {
+  "check": "news.duplicate_ticker_url",
+  "severity": "warn",
+  "message": "3,210 repeated (ticker/url) pairs (0.13%)",
+  "metrics": {
+   "rows": 3210
+  },
+  "examples": []
+ },
+ {
+  "check": "news.duplicate_ticker_title_time",
+  "severity": "warn",
+  "message": "24,088 repeated (ticker/title/date) keys (0.97%)",
+  "metrics": {
+   "rows": 24088
+  },
+  "examples": []
+ }
+]

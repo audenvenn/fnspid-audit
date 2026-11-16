@@ -1,0 +1,264 @@
+{
+ "sample": {
+  "jump": 483,
+  "truncated": 148,
+  "control": 120,
+  "absent": 2
+ },
+ "with_yahoo_and_both_dates": {
+  "jump": 301,
+  "control": 90
+ },
+ "jump_2020_07_06": {
+  "n": 301,
+  "discontinuity_matches_split_product": 288,
+  "with_split_between_vintages": 267,
+  "matched_and_split": 258,
+  "no_break_at_this_boundary": 7,
+  "unexplained": 6,
+  "unexplained_tickers": [
+   "COHR",
+   "GEN",
+   "GRN",
+   "NORW",
+   "VJET",
+   "WTRE"
+  ],
+  "median_abs_log_err": 1.7029898679452318e-08,
+  "adj_discontinuity_matches_pred_2pct": 268,
+  "with_visible_dividend_vintage_change": 116,
+  "dividend_factor_internal_vs_yahoo_within_0p5pct": 90,
+  "dividend_factor_internal_vs_yahoo_median_abs_log_err": 1.782803246859593e-07
+ },
+ "control_2020_07_06": {
+  "n": 90,
+  "discontinuity_matches_split_product": 89,
+  "with_split_between_vintages": 2,
+  "matched_and_split": 1,
+  "no_break_at_this_boundary": 1,
+  "unexplained": 0,
+  "unexplained_tickers": [],
+  "median_abs_log_err": 0.0,
+  "adj_discontinuity_matches_pred_2pct": 78,
+  "with_visible_dividend_vintage_change": 50,
+  "dividend_factor_internal_vs_yahoo_within_0p5pct": 41,
+  "dividend_factor_internal_vs_yahoo_median_abs_log_err": 1.368146105632306e-07
+ },
+ "segment_vintages": {
+  "last_segment_vintage_from_counts": {
+   "2015-01-01": 150,
+   "2023-07-17": 11,
+   "2022-01-13": 9,
+   "2021-05-25": 6,
+   "2021-04-12": 3,
+   "2023-01-23": 3,
+   "2023-08-28": 3,
+   "2022-06-13": 3
+  },
+  "segments_ending_2020_07_02_vintage_to_counts": {
+   "2026-11-13": 150,
+   "2023-07-17": 11,
+   "2020-08-18": 7,
+   "2021-05-25": 6,
+   "2022-01-13": 5,
+   "2020-12-07": 4,
+   "2022-11-10": 3,
+   "2021-04-12": 3
+  },
+  "segments_with_consistent_ratio_iqr_lt_1pct": 1539,
+  "segments": 1569
+ },
+ "truncated": {
+  "n": 148,
+  "with_yahoo": 55,
+  "yahoo_has_rows_after_fnspid_end": 55,
+  "same_security_and_continues": 46,
+  "continues_through_2023_12": 47
+ },
+ "absent": [
+  {
+   "ticker": "META",
+   "group": "absent",
+   "fnspid_last": null,
+   "yahoo_rows": 3644,
+   "yahoo_last": NaN,
+   "yahoo_rows_after_fnspid_last": 0.0,
+   "yahoo_rows_2020_07_to_2023_12": 0.0,
+   "overlap_last_year": NaN,
+   "ratio": NaN,
+   "ratio_log_iqr": NaN,
+   "ratio_is_split_product": false
+  },
+  {
+   "ticker": "NVDA",
+   "group": "absent",
+   "fnspid_last": null,
+   "yahoo_rows": 6997,
+   "yahoo_last": NaN,
+   "yahoo_rows_after_fnspid_last": 0.0,
+   "yahoo_rows_2020_07_to_2023_12": 0.0,
+   "overlap_last_year": NaN,
+   "ratio": NaN,
+   "ratio_log_iqr": NaN,
+   "ratio_is_split_product": false
+  }
+ ],
+ "unexplained_examples": {
+  "COHR": {
+   "fnspid": [
+    {
+     "date": "2020-07-06",
+     "close": "46.150001525878906",
+     "volume": "6277600.0"
+    },
+    {
+     "date": "2020-07-02",
+     "close": "128.61000061035156",
+     "volume": "182000.0"
+    }
+   ],
+   "yahoo": [
+    {
+     "Date": "2020-07-02",
+     "Close": "44.099998474121094",
+     "Volume": "10770700"
+    },
+    {
+     "Date": "2020-07-06",
+     "Close": "46.150001525878906",
+     "Volume": "6277600"
+    }
+   ]
+  },
+  "GEN": {
+   "fnspid": [
+    {
+     "date": "2020-07-06",
+     "close": "19.93000030517578",
+     "volume": "5157500.0"
+    },
+    {
+     "date": "2020-07-02",
+     "close": "0.6399999856948853",
+     "volume": "1190200.0"
+    }
+   ],
+   "yahoo": [
+    {
+     "Date": "2020-07-02",
+     "Close": "20.010000228881836",
+     "Volume": "7371100"
+    },
+    {
+     "Date": "2020-07-06",
+     "Close": "19.93000030517578",
+     "Volume": "5157500"
+    }
+   ]
+  },
+  "GRN": {
+   "fnspid": [
+    {
+     "date": "2020-07-06",
+     "close": "11.850000381469728",
+     "volume": "20.0"
+    },
+    {
+     "date": "2020-07-02",
+     "close": "54.44359970092773",
+     "volume": "362.0"
+    }
+   ],
+   "yahoo": [
+    {
+     "Date": "2020-07-02",
+     "Close": "10.890000343322754",
+     "Volume": "360"
+    },
+    {
+     "Date": "2020-07-06",
+     "Close": "11.850000381469727",
+     "Volume": "20"
+    }
+   ]
+  },
+  "NORW": {
+   "fnspid": [
+    {
+     "date": "2020-07-06",
+     "close": "22.34000015258789",
+     "volume": "3700.0"
+    },
+    {
+     "date": "2020-07-02",
+     "close": "9.59000015258789",
+     "volume": "16400.0"
+    }
+   ],
+   "yahoo": [
+    {
+     "Date": "2020-07-02",
+     "Close": "21.90999984741211",
+     "Volume": "400"
+    },
+    {
+     "Date": "2020-07-06",
+     "Close": "22.34000015258789",
+     "Volume": "3700"
+    }
+   ]
+  },
+  "VJET": {
+   "fnspid": [
+    {
+     "date": "2020-07-06",
+     "close": "7.400000095367432",
+     "volume": "12900.0"
+    },
+    {
+     "date": "2020-07-02",
+     "close": "1.4500000476837158",
+     "volume": "19100.0"
+    }
+   ],
+   "yahoo": [
+    {
+     "Date": "2020-07-02",
+     "Close": "1116250.0",
+     "Volume": "0"
+    },
+    {
+     "Date": "2020-07-06",
+     "Close": "1116250.0",
+     "Volume": "1"
+    }
+   ]
+  },
+  "WTRE": {
+   "fnspid": [
+    {
+     "date": "2020-07-06",
+     "close": "25.440000534057617",
+     "volume": "12300.0"
+    },
+    {
+     "date": "2020-07-02",
+     "close": "16.190000534057614",
+     "volume": "30400.0"
+    }
+   ],
+   "yahoo": [
+    {
+     "Date": "2020-07-02",
+     "Close": "24.760000228881836",
+     "Volume": "29100"
+    },
+    {
+     "Date": "2020-07-06",
+     "Close": "25.440000534057617",
+     "Volume": "12300"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "rows": 28606813,
+ "status": {
+  "date_only": 11376894,
+  "fixed_benzinga_+8h": 111974,
+  "fixed_reuters_et_wallclock": 12634482,
+  "ok_reuters_utc": 4455170,
+  "ambiguous_dst_hour": 220,
+  "ambiguous_reuters_switch": 1450,
+  "uncertain_nasdaq_relative": 26623
+ },
+ "date_only": 11376894,
+ "session_no_leak_null": 28387,
+ "dups": 34048,
+ "in_other_file": 26113656,
+ "stamp_before_url_date": 8517,
+ "stamp_after_url_date": 1338,
+ "with_url_date": 13264708
+}

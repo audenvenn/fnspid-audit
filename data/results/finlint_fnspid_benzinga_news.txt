@@ -1,0 +1,18 @@
+finlint news: FNSPID All_external.csv, Benzinga rows
+====================================================
+2 error(s), 4 warning(s), 0 info
+[ERROR] news.date_only_share: 96.3% of 1,529,287 timestamps carry no time of day (00:00:00); a same-date news->price merge cannot tell pre- from post-close news
+        rows=1,529,287, date_only=1,473,300, share=0.9634, unparseable=0
+[ERROR] news.timezone_sessions: session-anchored headlines fit their session only 0% of the time as labelled (UTC) but 99% if stamps are shifted by +8 h: timestamps look mis-converted
+        rows=4,070, in_window_as_labelled=0.00344, best_shift_h=8, in_window_best=0.986
+        e.g. shift_h=8, n=4,070, in_window=0.986
+        e.g. shift_h=7, n=4,070, in_window=0.9794
+        e.g. shift_h=9, n=4,070, in_window=0.9086
+[WARN ] news.duplicate_ticker_title_time: 16,034 repeated (ticker/title/date) keys (1.05%)
+        rows=16,034
+[WARN ] news.duplicate_ticker_url: 3 repeated (ticker/url) pairs (0.00%)
+        rows=3
+[WARN ] news.exact_duplicate_rows: 2 exact duplicate rows (0.00%)
+        rows=2, share=1.308e-06
+[WARN ] news.hour_profile: timed rows in New York time: 45.5% at 00-04h, 2.4% during 09:30-16:00, 21.4% after 16:00
+        timed_rows=55,987, share_00_04=0.4549, share_rth=0.02397, share_after_close=0.2141, weekend_share=0.0518

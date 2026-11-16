@@ -1,0 +1,83 @@
+[
+ {
+  "check": "news.date_only_share",
+  "severity": "error",
+  "message": "96.3% of 1,529,287 timestamps carry no time of day (00:00:00); a same-date news->price merge cannot tell pre- from post-close news",
+  "metrics": {
+   "rows": 1529287,
+   "date_only": 1473300,
+   "share": 0.9633901288639739,
+   "unparseable": 0
+  },
+  "examples": []
+ },
+ {
+  "check": "news.hour_profile",
+  "severity": "warn",
+  "message": "timed rows in New York time: 45.5% at 00-04h, 2.4% during 09:30-16:00, 21.4% after 16:00",
+  "metrics": {
+   "timed_rows": 55987,
+   "share_00_04": 0.45494489792273207,
+   "share_rth": 0.02396985014378338,
+   "share_after_close": 0.2140854126850876,
+   "weekend_share": 0.05179773876078375
+  },
+  "examples": []
+ },
+ {
+  "check": "news.timezone_sessions",
+  "severity": "error",
+  "message": "session-anchored headlines fit their session only 0% of the time as labelled (UTC) but 99% if stamps are shifted by +8 h: timestamps look mis-converted",
+  "metrics": {
+   "rows": 4070,
+   "in_window_as_labelled": 0.0034398034398034397,
+   "best_shift_h": 8,
+   "in_window_best": 0.985995085995086
+  },
+  "examples": [
+   {
+    "shift_h": 8,
+    "n": 4070,
+    "in_window": 0.985995085995086
+   },
+   {
+    "shift_h": 7,
+    "n": 4070,
+    "in_window": 0.9793611793611794
+   },
+   {
+    "shift_h": 9,
+    "n": 4070,
+    "in_window": 0.9085995085995086
+   }
+  ]
+ },
+ {
+  "check": "news.exact_duplicate_rows",
+  "severity": "warn",
+  "message": "2 exact duplicate rows (0.00%)",
+  "metrics": {
+   "rows": 2,
+   "share": 1.307798993910234e-06
+  },
+  "examples": []
+ },
+ {
+  "check": "news.duplicate_ticker_url",
+  "severity": "warn",
+  "message": "3 repeated (ticker/url) pairs (0.00%)",
+  "metrics": {
+   "rows": 3
+  },
+  "examples": []
+ },
+ {
+  "check": "news.duplicate_ticker_title_time",
+  "severity": "warn",
+  "message": "16,034 repeated (ticker/title/date) keys (1.05%)",
+  "metrics": {
+   "rows": 16034
+  },
+  "examples": []
+ }
+]

@@ -1,0 +1,248 @@
+{
+ "benzinga": {
+  "fnspid_rows": 1529287,
+  "fnspid_timed": 55987,
+  "fnspid_date_only": 1473300,
+  "date_only_share": 0.9633901288639739,
+  "upstream_rows": 1407324,
+  "matched_unique_url_ticker": 1407324,
+  "matched_timed": 55986,
+  "upstream_offsets": {
+   "-4": 55986
+  },
+  "fnspid_minus_upstream_local_h": {
+   "-4.0": 55986
+  },
+  "fnspid_minus_true_utc_h": {
+   "-8.0": 55986
+  },
+  "share_exactly_minus8h": 1.0,
+  "matched_date_only": 1351338,
+  "date_only_same_date_share": 1.0,
+  "headline_identical_share": 0.9916756908856809,
+  "timed_label_hour_le_08_share": 0.7394752353224856,
+  "timed_label_hour_ge_15_share": 0.013324521763980924,
+  "true_ny_time_profile": {
+   "share_before_0930": 0.37590869308946717,
+   "share_0930_1600": 0.48805972815117793,
+   "share_after_1600": 0.13603157875935484,
+   "share_weekend": 0.012538625037955239
+  },
+  "fnspid_date_differs_from_ny_date": 195,
+  "session_anchored_rows": 4070,
+  "session_counts": {
+   "mid_day": 2002,
+   "pre_market": 1485,
+   "mid_afternoon": 488,
+   "after_hours": 95
+  },
+  "in_window_as_labelled_utc": 0.0034398034398034397,
+  "in_window_shift_+8h": 0.985995085995086,
+  "best_shift": {
+   "shift_h": 8.0,
+   "in_window": 0.985995085995086
+  },
+  "season_medians": {
+   "after_hours|summer": {
+    "upstream_local_h": 17.32,
+    "ny_corrected_h": 17.32,
+    "n": 77
+   },
+   "after_hours|winter": {
+    "upstream_local_h": 18.2,
+    "ny_corrected_h": 17.2,
+    "n": 18
+   },
+   "mid_afternoon|summer": {
+    "upstream_local_h": 14.6,
+    "ny_corrected_h": 14.6,
+    "n": 338
+   },
+   "mid_afternoon|winter": {
+    "upstream_local_h": 15.58,
+    "ny_corrected_h": 14.58,
+    "n": 150
+   },
+   "mid_day|summer": {
+    "upstream_local_h": 12.57,
+    "ny_corrected_h": 12.57,
+    "n": 1509
+   },
+   "mid_day|winter": {
+    "upstream_local_h": 13.42,
+    "ny_corrected_h": 12.42,
+    "n": 493
+   },
+   "pre_market|summer": {
+    "upstream_local_h": 7.62,
+    "ny_corrected_h": 7.62,
+    "n": 1290
+   },
+   "pre_market|winter": {
+    "upstream_local_h": 9.18,
+    "ny_corrected_h": 8.18,
+    "n": 195
+   }
+  },
+  "per_session": {
+   "after_hours": {
+    "n": 95,
+    "in_window_corrected": 0.9579,
+    "in_window_as_labelled": 0.0
+   },
+   "mid_afternoon": {
+    "n": 488,
+    "in_window_corrected": 0.998,
+    "in_window_as_labelled": 0.0
+   },
+   "mid_day": {
+    "n": 2002,
+    "in_window_corrected": 0.994,
+    "in_window_as_labelled": 0.0
+   },
+   "pre_market": {
+    "n": 1485,
+    "in_window_corrected": 0.9731,
+    "in_window_as_labelled": 0.0094
+   }
+  }
+ },
+ "reuters": {
+  "rows": 8556310,
+  "date_only": 10649,
+  "first": "2007-01-01 05:46:00",
+  "last": "2016-08-16 23:59:00",
+  "rows_before_switch": 2229672,
+  "rows_after_switch": 6325908,
+  "rows_in_switch_gap": 730,
+  "pre_switch": {
+   "timed_rows": 2227585,
+   "anchored_rows": 585,
+   "best_shift_h": 0,
+   "in_window_best": 0.9623931623931624,
+   "in_window_shift0": 0.9623931623931624,
+   "by_dst": {
+    "summer": {
+     "n": 416,
+     "best_shift_h": 0,
+     "in_window_best": 0.9711538461538461,
+     "in_window_shift0": 0.9711538461538461
+    },
+    "winter": {
+     "n": 169,
+     "best_shift_h": 0,
+     "in_window_best": 0.9408284023668639,
+     "in_window_shift0": 0.9408284023668639
+    }
+   }
+  },
+  "post_switch": {
+   "timed_rows": 6317351,
+   "anchored_rows": 2322,
+   "best_shift_h": 4,
+   "in_window_best": 0.6761412575366064,
+   "in_window_shift0": 0.0008613264427217916,
+   "by_dst": {
+    "summer": {
+     "n": 1572,
+     "best_shift_h": 4,
+     "in_window_best": 0.9745547073791349,
+     "in_window_shift0": 0.001272264631043257
+    },
+    "winter": {
+     "n": 750,
+     "best_shift_h": 5,
+     "in_window_best": 0.9693333333333334,
+     "in_window_shift0": 0.0
+    }
+   }
+  },
+  "switch_evidence": {
+   "share_label_h6_9_utc_regime_max": 0.075,
+   "share_label_h6_9_wall_regime_min": 0.259,
+   "last_weekday_utc_regime": "2009-11-13",
+   "first_weekday_wallclock_regime": "2009-11-16",
+   "weekdays_after_switch_classified_utc": 0,
+   "daily_n_and_share_h6_9": {
+    "2009-11-09": [
+     1050,
+     0.049
+    ],
+    "2009-11-10": [
+     1041,
+     0.05
+    ],
+    "2009-11-11": [
+     820,
+     0.063
+    ],
+    "2009-11-12": [
+     1019,
+     0.06
+    ],
+    "2009-11-13": [
+     650,
+     0.075
+    ],
+    "2009-11-16": [
+     1111,
+     0.359
+    ],
+    "2009-11-17": [
+     1034,
+     0.406
+    ],
+    "2009-11-18": [
+     1000,
+     0.385
+    ],
+    "2009-11-19": [
+     987,
+     0.334
+    ],
+    "2009-11-20": [
+     589,
+     0.289
+    ]
+   }
+  },
+  "status_counts": {
+   "fixed_reuters_et_wallclock": 6317241,
+   "ok_reuters_utc": 2227585,
+   "date_only": 10649,
+   "ambiguous_reuters_switch": 725,
+   "ambiguous_dst_hour": 110
+  },
+  "prn_rows": 1561557,
+  "prn_top_ny_times_corrected": {
+   "09:00": 73350,
+   "08:00": 68585,
+   "08:30": 40478,
+   "10:00": 39487,
+   "07:00": 36454,
+   "06:00": 28113
+  },
+  "prn_top_label_times_post_switch": {
+   "09:00": 61064,
+   "08:00": 56762,
+   "08:30": 30946,
+   "10:00": 30087,
+   "07:00": 26607,
+   "06:00": 20028
+  },
+  "fnspid_date_differs_from_ny_date": 113487
+ },
+ "nasdaq_file": {
+  "rows": 2491785,
+  "date_only": 2465162,
+  "date_only_share": 0.989315691361815,
+  "timed": 26623,
+  "timed_whole_hour_share": 0.9758103895128273,
+  "timed_first": "2023-12-16 01:00:00",
+  "timed_last": "2023-12-16 23:56:00",
+  "timed_by_year": {
+   "2023": 26623
+  },
+  "unparseable": 0
+ }
+}

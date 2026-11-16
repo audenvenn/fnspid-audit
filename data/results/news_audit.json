@@ -1,0 +1,313 @@
+{
+ "rows_by_file": {
+  "0": 13057514,
+  "1": 15549299
+ },
+ "file0": {
+  "dup_records": 15426,
+  "dup_ticker_url": 23562,
+  "dup_ticker_title_day_with_ticker": 37744,
+  "dup_ticker_title_day_by_source": {
+   "benzinga": {
+    "dups": 23687,
+    "rows_with_ticker": 1529287
+   },
+   "partner:gurufocus.com": {
+    "dups": 1837,
+    "rows_with_ticker": 193664
+   },
+   "partner:zacks.com": {
+    "dups": 2658,
+    "rows_with_ticker": 429559
+   },
+   "partner:investors.com": {
+    "dups": 366,
+    "rows_with_ticker": 62721
+   },
+   "partner:talkmarkets.com": {
+    "dups": 282,
+    "rows_with_ticker": 10685
+   },
+   "partner:seekingalpha.com": {
+    "dups": 5744,
+    "rows_with_ticker": 897219
+   },
+   "partner:news.investors.com": {
+    "dups": 1118,
+    "rows_with_ticker": 67555
+   },
+   "partner:vetr.com": {
+    "dups": 552,
+    "rows_with_ticker": 10827
+   },
+   "partner:marketfy.com": {
+    "dups": 832,
+    "rows_with_ticker": 3413
+   },
+   "partner:smallcapnetwork.com": {
+    "dups": 88,
+    "rows_with_ticker": 8059
+   },
+   "partner:thestreet.com": {
+    "dups": 351,
+    "rows_with_ticker": 15953
+   },
+   "partner:moneyshow.com": {
+    "dups": 77,
+    "rows_with_ticker": 4113
+   },
+   "partner:tradershuddle.com": {
+    "dups": 115,
+    "rows_with_ticker": 16476
+   },
+   "partner:foxbusiness.com": {
+    "dups": 33,
+    "rows_with_ticker": 2760
+   },
+   "partner:money.msn.com": {
+    "dups": 2,
+    "rows_with_ticker": 586
+   },
+   "partner:foxnews.com": {
+    "dups": 2,
+    "rows_with_ticker": 10
+   }
+  },
+  "articles_reused_under_multiple_urls": {
+   "article_texts": 1018,
+   "urls": 4744
+  },
+  "urls_with_ticker": {
+   "urls": 1773424,
+   "share_multi_ticker": 0.2600455390250724,
+   "max_tickers_per_url": 1704
+  },
+  "rows": 13057514,
+  "with_ticker": 3252887,
+  "date_only": 4455866,
+  "ticker_in_prices": 2410739,
+  "has_article": 1248312,
+  "cyrillic_title": 800976,
+  "pre1990": 6,
+  "epoch_1969_1970": 1,
+  "amp_mangled_title": 127411
+ },
+ "file1": {
+  "dup_records": 18622,
+  "dup_ticker_url": 26772,
+  "dup_ticker_title_day_with_ticker": 200658,
+  "dup_ticker_title_day_by_source": {
+   "benzinga": {
+    "dups": 34834,
+    "rows_with_ticker": 1529287
+   },
+   "partner:gurufocus.com": {
+    "dups": 4603,
+    "rows_with_ticker": 193664
+   },
+   "partner:zacks.com": {
+    "dups": 123396,
+    "rows_with_ticker": 429559
+   },
+   "partner:investors.com": {
+    "dups": 2721,
+    "rows_with_ticker": 62721
+   },
+   "partner:talkmarkets.com": {
+    "dups": 282,
+    "rows_with_ticker": 10685
+   },
+   "partner:seekingalpha.com": {
+    "dups": 6334,
+    "rows_with_ticker": 897219
+   },
+   "partner:news.investors.com": {
+    "dups": 2286,
+    "rows_with_ticker": 67555
+   },
+   "partner:vetr.com": {
+    "dups": 552,
+    "rows_with_ticker": 10827
+   },
+   "partner:marketfy.com": {
+    "dups": 832,
+    "rows_with_ticker": 3413
+   },
+   "partner:smallcapnetwork.com": {
+    "dups": 88,
+    "rows_with_ticker": 8059
+   },
+   "partner:thestreet.com": {
+    "dups": 351,
+    "rows_with_ticker": 15953
+   },
+   "partner:moneyshow.com": {
+    "dups": 77,
+    "rows_with_ticker": 4113
+   },
+   "partner:tradershuddle.com": {
+    "dups": 115,
+    "rows_with_ticker": 16476
+   },
+   "partner:foxbusiness.com": {
+    "dups": 33,
+    "rows_with_ticker": 2760
+   },
+   "partner:money.msn.com": {
+    "dups": 2,
+    "rows_with_ticker": 586
+   },
+   "partner:foxnews.com": {
+    "dups": 2,
+    "rows_with_ticker": 10
+   },
+   "nasdaq": {
+    "dups": 24150,
+    "rows_with_ticker": 2491785
+   }
+  },
+  "articles_reused_under_multiple_urls": {
+   "article_texts": 7269,
+   "urls": 23789
+  },
+  "urls_with_ticker": {
+   "urls": 2953850,
+   "share_multi_ticker": 0.305881815258053,
+   "max_tickers_per_url": 1704
+  },
+  "rows": 15549299,
+  "with_ticker": 5744672,
+  "date_only": 6921028,
+  "ticker_in_prices": 4699756,
+  "has_article": 3740090,
+  "cyrillic_title": 800977,
+  "pre1990": 6,
+  "epoch_1969_1970": 1,
+  "amp_mangled_title": 127461
+ },
+ "records_of_file0_also_in_file1": 13042088,
+ "distinct_records": {
+  "file0": 13042088,
+  "file1": 15530677
+ },
+ "ticker_url_pairs_in_both_files": 13033266,
+ "urls_in_both_files": {
+  "urls": 11565422,
+  "urls_file0": 11565422,
+  "by_source": {
+   "reuters": 8544512,
+   "benzinga": 949737,
+   "lenta": 800964,
+   "bloomberg": 446444,
+   "partner:seekingalpha.com": 389783,
+   "partner:zacks.com": 204963,
+   "partner:gurufocus.com": 114798,
+   "partner:investors.com": 37701
+  },
+  "stamp_identical_share": 1.0
+ },
+ "unjoinable_news_file1": {
+  "after_series_end": 86856,
+  "before_series_start": 80108,
+  "ticker_not_in_prices": 1044916,
+  "with_ticker": 5744672
+ },
+ "unjoinable_top_tickers": {
+  "NVDA": 11862,
+  "BROGW": 10456,
+  "PMAY": 9108,
+  "BRK": 8797,
+  "KJUL": 8693,
+  "ARTLW": 8677,
+  "UFEB": 8603,
+  "CLSN": 8472,
+  "GRP-U": 8466,
+  "GECCM": 8268,
+  "CRD-A": 8208,
+  "BCDAW": 8161,
+  "YGYIP": 7063,
+  "DHCNL": 6900,
+  "XLE": 6333
+ },
+ "unique_tickers_in_news": 8552,
+ "unique_news_tickers_with_price_file": 5820,
+ "nasdaq_rows_ticker_checks": {
+  "rows": 2491785,
+  "title_names_other_ticker_only": 413207,
+  "title_names_other_ticker_share": 0.16582770985458214,
+  "long_articles": 2353101,
+  "long_no_symbol_mention_share": 0.297130467413001,
+  "long_no_symbol_mention_by_ticker_len": {
+   "1": {
+    "size": 38186,
+    "mean": 0.0848
+   },
+   "2": {
+    "size": 151398,
+    "mean": 0.0977
+   },
+   "3": {
+    "size": 911172,
+    "mean": 0.0753
+   },
+   "4": {
+    "size": 1252345,
+    "mean": 0.4891
+   }
+  }
+ },
+ "encoding_flags": {
+  "0|(no url)|enc_t|letter_spaced": 1,
+  "0|benzinga|enc_t|html_entity": 2792,
+  "0|benzinga|enc_t|letter_spaced": 7,
+  "0|benzinga|enc_t|mojibake": 2,
+  "0|bloomberg|enc_a|html_entity": 159,
+  "0|bloomberg|enc_a|letter_spaced": 7,
+  "0|bloomberg|enc_a|mojibake": 3,
+  "0|bloomberg|enc_t|mojibake": 3,
+  "0|lenta|enc_a|ctrl": 113,
+  "0|lenta|enc_a|html_entity": 1,
+  "0|lenta|enc_a|letter_spaced": 11,
+  "0|lenta|enc_t|ctrl": 1,
+  "0|partner:gurufocus.com|enc_t|html_entity": 162,
+  "0|partner:gurufocus.com|enc_t|letter_spaced": 17,
+  "0|partner:gurufocus.com|enc_t|mojibake": 513,
+  "0|partner:thestreet.com|enc_t|mojibake": 5,
+  "0|partner:zacks.com|enc_t|html_entity": 43,
+  "0|partner:zacks.com|enc_t|mojibake": 7,
+  "0|reuters|enc_t|ctrl": 3116,
+  "0|reuters|enc_t|html_entity": 17,
+  "0|reuters|enc_t|letter_spaced": 4057,
+  "0|reuters|enc_t|mojibake": 120697,
+  "1|(no url)|enc_t|letter_spaced": 1,
+  "1|benzinga|enc_t|html_entity": 2792,
+  "1|benzinga|enc_t|letter_spaced": 7,
+  "1|benzinga|enc_t|mojibake": 2,
+  "1|bloomberg|enc_a|html_entity": 159,
+  "1|bloomberg|enc_a|letter_spaced": 7,
+  "1|bloomberg|enc_a|mojibake": 3,
+  "1|bloomberg|enc_t|mojibake": 3,
+  "1|lenta|enc_a|ctrl": 113,
+  "1|lenta|enc_a|html_entity": 1,
+  "1|lenta|enc_a|letter_spaced": 11,
+  "1|lenta|enc_t|ctrl": 1,
+  "1|nasdaq|enc_a|ctrl": 9,
+  "1|nasdaq|enc_a|fffd": 298,
+  "1|nasdaq|enc_a|html_entity": 13,
+  "1|nasdaq|enc_a|letter_spaced": 109,
+  "1|nasdaq|enc_a|mojibake": 5315,
+  "1|nasdaq|enc_t|fffd": 2,
+  "1|nasdaq|enc_t|html_entity": 259,
+  "1|nasdaq|enc_t|mojibake": 15,
+  "1|partner:gurufocus.com|enc_t|html_entity": 162,
+  "1|partner:gurufocus.com|enc_t|letter_spaced": 17,
+  "1|partner:gurufocus.com|enc_t|mojibake": 513,
+  "1|partner:thestreet.com|enc_t|mojibake": 5,
+  "1|partner:zacks.com|enc_t|html_entity": 43,
+  "1|partner:zacks.com|enc_t|mojibake": 7,
+  "1|reuters|enc_t|ctrl": 3116,
+  "1|reuters|enc_t|html_entity": 17,
+  "1|reuters|enc_t|letter_spaced": 4057,
+  "1|reuters|enc_t|mojibake": 120697
+ }
+}

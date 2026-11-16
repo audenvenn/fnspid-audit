@@ -1,0 +1,53 @@
+finlint prices: FNSPID Stock_price/full_history.zip
+====================================================
+4 error(s), 8 warning(s), 1 info
+[ERROR] prices.coverage_end_clusters: 3,077 of 7,693 series stop on 3 shared date(s) before the panel end (2023-12-28)
+        series_in_clusters=3,077, series=7,693, panel_end=2023-12-28
+        e.g. date=2020-07-02, series_ending=2,351
+        e.g. date=2020-06-19, series_ending=425
+        e.g. date=2020-04-01, series_ending=301
+[ERROR] prices.nonpositive: 19 rows with close <= 0
+        rows=19
+[ERROR] prices.splice_dates: 14 date(s) where many series break at once: 2020-07-06 (adj_factor_reset: 2532), 2020-04-02 (adj_factor_reset: 547), 2020-07-06 (jumps: 329), 2015-01-02 (jumps: 73), 2020-06-22 (adj_factor_reset: 38)
+        dates=14
+        e.g. date=2020-07-06, signal=adj_factor_reset, count=2,532, pairs=4,412, z=3,095
+        e.g. date=2020-04-02, signal=adj_factor_reset, count=547, pairs=6,904, z=92.5
+        e.g. date=2020-07-06, signal=jumps, count=329, pairs=4,412, z=170.5
+[ERROR] prices.split_like_jumps: 31,000 moves beyond +100%/-50% in 1,544 series; 4,845 look like unadjusted splits, 25,736 revert (bad ticks)
+        jumps=31,000, series=1,544, kind_spike=25,736, kind_split_like=4,845, kind_other=419
+        e.g. ticker=AACG, date=2018-08-27, r=0.2991, split_k=3
+        e.g. ticker=AACG, date=2019-04-09, r=2.078, split_k=0.5
+        e.g. ticker=AACG, date=2021-02-04, r=10.51, split_k=0.1
+[WARN ] prices.internal_gaps: 1,832 within-series gaps longer than 30 calendar days in 487 series
+        gaps=1,832, series=487
+        e.g. ticker=AAMC, prev_date=2020-07-02, date=2022-03-21
+        e.g. ticker=AAN, prev_date=2020-07-02, date=2020-11-25
+        e.g. ticker=ABMD, prev_date=2020-04-01, date=2020-07-02
+[WARN ] prices.missing_close: 257 rows with a missing (NaN) close
+        rows=257
+[WARN ] prices.ohlc_consistency: 3,491 rows (non-zero prices) violate low <= open,close <= high
+        rows=3,491, share=0.0001176
+        e.g. ticker=AC, date=2008-11-20, open=25.950000762939453, high=25.0, low=25.0, close=25.950000762939453
+        e.g. ticker=ACB, date=2000-01-03, open=39.82770156860352, high=40.90039825439453, low=40.90039825439453, close=40.90039825439453
+        e.g. ticker=ACB, date=2000-01-07, open=39.29669952392578, high=39.82770156860352, low=39.82770156860352, close=39.82770156860352
+[WARN ] prices.sparse_dates: 38 dates carry <5% of the usual cross-section (holiday or stray rows?)
+        dates=38, rows=124
+        e.g. date=1985-05-27, rows=1
+        e.g. date=1985-09-27, rows=1
+        e.g. date=1988-02-15, rows=1
+[WARN ] prices.stale_runs: 115,188 runs of >= 5 identical closes (991,255 rows); 1,161,626 zero-volume rows
+        runs=115,188, rows_in_runs=991,255, share_rows=0.0334, series_with_runs=3,405, zero_volume_rows=1,161,626
+        e.g. ticker=WMC, start=2005-06-23, len=1,733
+        e.g. ticker=GRAF, start=2012-07-02, len=1,381
+        e.g. ticker=HUBB, start=1973-02-21, len=1,127
+[WARN ] prices.survivorship_hint: only 18 of 7,693 series (0.23%) end at scattered dates over a 62-year panel: delisted securities are probably missing (survivor-only universe)
+        scattered_end_series=18, series=7,693, years=62
+[WARN ] prices.weekend_rows: 5 rows dated on Saturday/Sunday
+        rows=5, dates=5
+        e.g. ticker=ASRVP, date=1999-09-25
+        e.g. ticker=CLDX, date=2007-03-10
+        e.g. ticker=FTR, date=1990-03-04
+[WARN ] prices.zero_as_missing: 1,081,476 rows (3.64%) have an open/high/low/close of exactly 0 (1,081,474 zero opens): missing values stored as zero
+        rows=1,081,476, zero_open=1,081,474, share=0.03644
+[INFO ] prices.duplicates: no duplicate (ticker, date) rows
+        dup_rows=0
